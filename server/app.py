@@ -23,7 +23,7 @@ class Signup(Resource):
             return {'message': 'Username already exists.'}, 409
 
         new_user = User(username=username)
-        new_user.password_hash = password  # This will use the setter to hash the password
+        new_user.password_hash = password 
         db.session.add(new_user)
         db.session.commit()
 
